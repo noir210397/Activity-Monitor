@@ -20,7 +20,7 @@ namespace Activity_Monitor.Events
     
     public class ClientEvent : Event
     {
-        public EventLevel Level { get; init; } =  EventLevel.Info;
+        public string Level { get; init; } =  EventLevel.Info.ToString();
         public long ClientCount { get; init; }
         public ClientEvent( long clientCount)
         {      
@@ -29,10 +29,10 @@ namespace Activity_Monitor.Events
     }
     public class WorkEventRecord : Event
     {
-        public WorkEvent EventType { get; init; }
-        public EventLevel Level { get; init; }
+        public string EventType { get; init; }
+        public string Level { get; init; }
 
-        public WorkEventRecord(WorkEvent eventType, EventLevel level)
+        public WorkEventRecord(string eventType, string level)
         {
             EventType = eventType;
             Level = level;

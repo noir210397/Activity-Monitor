@@ -37,7 +37,7 @@ namespace Activity_Monitor.Services
                 _ => EventLevel.Info
 
             };
-            await _hubContext.Clients.All.SendAsync("ReceiveWorkEvent", new WorkEventRecord(work, level), token);
+            await _hubContext.Clients.All.SendAsync("ReceiveWorkEvent", new WorkEventRecord(work.ToString(), level.ToString())); 
             // delay for a while
             await Task.Delay(TimeSpan.FromSeconds(5), token); 
         }
